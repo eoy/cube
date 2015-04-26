@@ -1,0 +1,232 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or vendor/assets/stylesheets of plugins, if any, can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any styles
+ * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
+ * file per style scope.
+ *
+ *= require_self
+ */
+
+@import 'bourbon';
+@import 'framework_and_overrides';
+html {
+  background: none;
+}
+body {
+    background: none;
+    margin-top: 100px;
+    overflow-x: hidden;
+ }
+ main {
+  background: none;
+ }
+
+@-moz-keyframes spinningH {
+  from {
+    -moz-transform: rotateX(0deg) rotateY(0deg);
+  }
+  to{
+    -moz-transform: rotateX(360deg) rotateY(360deg);
+  }
+}
+
+@-webkit-keyframes spinningH {
+  from {
+    -webkit-transform: rotateX(0deg) rotateY(0deg);
+  }
+  to{
+    -webkit-transform: rotateX(360deg) rotateY(360deg);
+  }
+}
+
+@-o-keyframes spinningH {
+  from {
+    -o-transform: rotateX(0deg) rotateY(0deg);
+  }
+  to{
+    -o-transform: rotateX(360deg) rotateY(360deg);
+  }
+}
+
+@-ms-keyframes spinningH {
+  from {
+    -ms-transform: rotateX(0deg) rotateY(0deg);
+  }
+  to{
+    -ms-transform: rotateX(360deg) rotateY(360deg);
+  }
+}
+
+@keyframes spinningH {
+  from {
+    transform: rotateX(0deg) rotateY(0deg);
+  }
+  to{
+    transform: rotateX(360deg) rotateY(360deg);
+  }
+}
+
+ #container {
+  @include perspective(1000px);
+  @include perspective-origin(50% 50%);
+  margin-top: 15%;
+ }
+
+.animate {
+  @include animation(spinningH 25s infinite linear);
+}
+
+#cube {
+  position: relative;
+  margin: 0 auto;
+  height: 200px;
+  width: 200px;
+  @include transition(transform 2s linear);
+  @include transform-style(preserve-3d);
+}
+
+#cube>div {
+  //border: 1px solid #eee;
+  background-position:center center;
+  box-sizing: content-box;
+  height: 200px;
+  opacity: .7;
+  padding: 0px;
+  position: absolute;
+  text-align: center;
+  width: 200px;
+}
+
+.table {
+  display: table;
+  height: 100%;
+  width: 100%;
+  .cell {
+    display: table-cell;
+    vertical-align: middle;
+  }
+}
+
+#cube > div:nth-child(1) {
+  @include transform(translateZ(100px));
+  background-color  : #eee;
+  background-repeat : no-repeat;
+}
+
+#cube > div:nth-child(2) {
+  @include transform(rotateY(90deg) translateZ(100px));
+  background-color  : rgba(0,0,0,0.2);
+  background-repeat : no-repeat;
+}
+
+#cube > div:nth-child(3) {
+  @include transform(rotateY(180deg) translateZ(100px));
+  background-color  : rgba(0,0,0,0.3);
+  background-repeat : no-repeat;
+}
+
+#cube > div:nth-child(4) {
+  @include transform(rotateY(-90deg) translateZ(100px));
+  background-color  : rgba(0,0,0,0.4);
+  background-repeat : no-repeat;
+  @include transition(all .3s);
+}
+
+#cube > div.side-4.active {
+  opacity: 1;
+  @include transform(rotateY(-90deg) translateZ(100px) translateY(-50%));
+}
+
+#cube > div:nth-child(5) {
+  @include transform(rotateX(-90deg) translateZ(100px) rotate(180deg));
+  background-color  : rgba(0,0,0,0.5);
+  background-repeat :no-repeat;
+  @include transition(all .3s);
+}
+#cube > div.side-5.active {
+  @include transform(rotateX(-90deg) translateZ(100px) rotate(180deg) translateX(35%));
+}
+
+#cube > div:nth-child(6)  {
+  @include transform(rotateX(90deg) translateZ(100px));
+  background-color  : rgba(0,0,0,0.6);
+  background-repeat :no-repeat;
+  text-align:center;
+  @include transition(all .3s);
+}
+
+#cube > div.side-6.active {
+  opacity: 1;
+  @include transform(rotateX(90deg) translateZ(99px) translateY(0) translateX(30px));
+  & + div.side-7.active {
+    @include transform(rotateX(90deg) translateZ(101px) translateY(-10%) translateX(30px));
+  }
+}
+
+#cube > div.side-6.active-2 {
+  opacity: 1;
+  @include transform(rotateX(90deg) translateZ(99px) translateY(0) translateX(50px));
+  & + div.side-7.active-2 {
+    @include transform(rotateX(90deg) translateZ(101px) translateY(-20%) translateX(50px));
+  }
+}
+
+#cube > div:nth-child(7) {
+  @include transform(rotateX(90deg) translateZ(101px));
+  background-color  : rgba(0,0,0,0.6);
+  background-repeat :no-repeat;
+  text-align:center;
+  height: 200px;
+  width: 20px;
+  top: 0;
+  left: 20%;
+  background: rgba(111, 111, 111, 0.6);
+  opacity: 0;
+  @include transition(all .3s);
+}
+
+#cube > div.side-7.active {
+  opacity: 1;
+  @include transform(rotateX(90deg) translateZ(101px) translateY(-10%));
+}
+
+#cube > div.side-7.active-2 {
+  opacity: 1;
+  @include transform(rotateX(90deg) translateZ(101px) translateY(-20%) translateX(30px));
+}
+
+.form-container {
+  margin-top: 150px;
+}
+
+input[type="password"] {
+  background: #F7F7F7;
+  border: none;
+  border-bottom: 1px solid #E7E7E7;
+  box-shadow: none;
+  font-family: $helvetica;
+  font-size: 24px;
+  font-weight: 300;
+  height: 60px;
+  margin-bottom: 60px;
+  padding: 10px 25px;
+  text-align: left;
+  width: 100%;
+  &:focus {
+    background: #f5f5f5;
+    border-bottom: 1px solid #E7E7E7;
+  }
+}
+
+.serif {
+  color: #666;
+  font-family: 'Baskerville', Times, Georgia, serif;
+  font-size: 24px;
+  margin-bottom: 1.5em;
+}
