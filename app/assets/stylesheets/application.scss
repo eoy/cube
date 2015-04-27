@@ -80,6 +80,9 @@ body {
 
 .animate {
   @include animation(spinningH 25s infinite linear);
+  &:hover {
+    @include animation-play-state(paused);
+  }
 }
 
 #cube {
