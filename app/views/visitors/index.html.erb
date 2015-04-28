@@ -50,7 +50,15 @@
 <div class="row form-container">
   <div class="medium-6 columns medium-offset-3 text-center">
     <h1 class="serif">
-      The first question?
+      I've been asked if I am a poet,<br>
+      something I always deny.<br>
+      But when need arises, I am full of surprises,<br>
+      I'm your very own (rhyming) guy.<br><br>
+
+      The first clue is simple,
+      at least to some extent.
+      As long as you remember
+      our very own song by
     </h1>
     <input type="password" autofocus="true" placeholder="PASSWORD">
   </div>
@@ -63,15 +71,25 @@
     var setStep = function(step) {
       switch(step) {
         case 1:
-          if ($input.val() == "heart") {
+          if ($input.val() == "kent" || $input.val() == "Kent") {
             window.step = step + 1;
             $('.side-7').addClass('active');
+            $input.val('');
+            $input.blur();
+            $('.serif').fadeOut('fast', function(){
+              $('.serif').html("By now you must have noticed,<br>you're living with a geek.<br>We adventure, we snuggle,<br>and yet we stay up all night playing __________<br>What we have is something unique.").fadeIn('slow');
+            });
           }
           break;
         case 2:
-          if ($input.val() == "cube") {
+          if ($input.val() == "twilight struggle" || $input.val() == "Twilight Struggle") {
             window.step = step + 1;
             $('.side-6').addClass('active');
+            $input.val('');
+            $input.blur();
+            $('.serif').fadeOut('fast', function(){
+              $('.serif').html("Step 3").fadeIn('slow');
+            });
           }
           break;
         case 3:
