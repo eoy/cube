@@ -3,42 +3,42 @@
     <div class="side-1">
       <div class="table">
         <div class="cell">
-          <h3>1</h3>
+          <h3>&#9829;</h3>
         </div>
       </div>
     </div>
     <div class="side-2">
       <div class="table">
         <div class="cell">
-          <h3>2</h3>
+          <h3>&#9829;</h3>
         </div>
       </div>
     </div>
     <div class="side-3">
       <div class="table">
         <div class="cell">
-          <h33</h3>
+          <h3>&#9829;</h3>
         </div>
       </div>
     </div>
     <div class="side-4">
       <div class="table">
         <div class="cell">
-          <h3>4</h3>
+          <h3>&#9829;</h3>
         </div>
       </div>
     </div>
     <div class="side-5">
       <div class="table">
         <div class="cell">
-          <h3>5</h3>
+          <h3>&#9829;</h3>
         </div>
       </div>
     </div>
     <div class="side-6">
       <div class="table">
         <div class="cell">
-          <h3>6</h3>
+          <h3>&#9829;</h3>
         </div>
       </div>
     </div>
@@ -53,12 +53,16 @@
       I've been asked if I am a poet,<br>
       something I always deny.<br>
       But when need arises, I am full of surprises,<br>
-      I'm your very own (rhyming) guy.<br><br>
+      and the poet inside me says <i>hi</i>.<br><br>
 
-      The first clue is simple,
-      at least to some extent.
-      As long as you remember
-      our very own song by
+      <hr>
+      <br>
+
+      The first clue is simple,<br>
+      at least to some extent.<br>
+      As long as you remember<br>
+      our very own song by<br>
+      __________
     </h1>
     <input type="password" autofocus="true" placeholder="PASSWORD">
   </div>
@@ -77,7 +81,7 @@
             $input.val('');
             $input.blur();
             $('.serif').fadeOut('fast', function(){
-              $('.serif').html("By now you must have noticed,<br>you're living with a geek.<br>We adventure, we snuggle,<br>and yet we stay up all night playing __________<br>What we have is something unique.").fadeIn('slow');
+              $('.serif').html("By now you must have noticed,<br>you're living with a geek.<br>We adventure, we snuggle,<br>we stay up all night playing __________<br>What we have is something unique.").fadeIn('slow');
             });
           }
           break;
@@ -88,33 +92,49 @@
             $input.val('');
             $input.blur();
             $('.serif').fadeOut('fast', function(){
-              $('.serif').html("Step 3").fadeIn('slow');
+              $('.serif').html("My sun and stars, my own little deus,<br>do you remember our night in __________?<br>I knew already then that you are the one,<br>and that our adventures had only just begun.").fadeIn('slow');
             });
           }
           break;
         case 3:
-          if ($input.val() == "cock") {
+          if ($input.val() == "Sao Mateus" || $input.val() == "sao mateus" || $input.val() == "São Mateus" || $input.val() == "são mateus") {
             window.step = step + 1;
             $('.side-7').removeClass('active').addClass('active-2');
+            $input.val('');
+            $input.blur();
+            $('.serif').fadeOut('fast', function(){
+              $('.serif').html("Our lives are about to change,<br>you'll soon be a mother.<br>But don't fret, it will be easy<br>as long as we have __________.").fadeIn('slow');
+            });
           }
           break;
         case 4:
-          if ($input.val() == "balls") {
+          if ($input.val() == "each other" || $input.val() == "eachother" || $input.val() == "Each other" || $input.val() == "Eachother") {
             window.step = step + 1;
             $('.side-6').removeClass('active').addClass('active-2');
+            $input.val('');
+            $input.blur();
+            $('.serif').fadeOut('fast', function(){
+              $('.serif').html("That love could be this fantastic,<br>I never really knew.<br>Or that there was someone,<br>as amazing as you.<br><br>Now the world's best person with a round belly,<br>is the girl I first met at _________.").fadeIn('slow');
+            });
           }
           break;
         case 5:
-          if ($input.val() == "pussy") {
+          if ($input.val() == "Teerenpeli" || $input.val() == "teerenpeli") {
             window.step = step + 1;
             $('.side-4').addClass('active');
+            $input.val('');
+            $input.blur();
+            $('.serif').fadeOut('fast', function(){
+              $('.serif').html("What are these glyphs?<bR>Oh the suspense!<br>Don't worry my love,<br>it will soon all make sense.<br>Jag älskar dig, aishiteru,<br>rakastan sinua, __________!").fadeIn('slow');
+            });
           }
           break;
         case 6:
-          if ($input.val() == "galore") {
+          if ($input.val() == "i love you" || $input.val() == "I love you") {
             window.step = step + 1;
             $('.side-5').addClass('active');
             $('.form-container').fadeOut('slow');
+            $('#cube').addClass('red');
           }
           break;
       }
